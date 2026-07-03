@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const { nombre, empresa, pais, telefono, email, servicio, mensaje } = body;
 
     await resend.emails.send({
-      from: "Saetas Prevención Web <no-reply@saetaprevencion.com>",
+      from: "Saetas Prevención Web <no-reply@saetasprevencion.com>",
       to: process.env.CONTACT_EMAIL || "saetasprevencion@gmail.com",
       subject: `Nuevo contacto desde la web: ${nombre} - ${servicio}`,
       html: `

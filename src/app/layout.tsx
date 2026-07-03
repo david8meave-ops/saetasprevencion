@@ -6,7 +6,7 @@ import { CartProvider } from "@/context/CartContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://saetaprevencion.com"),
+  metadataBase: new URL("https://www.saetasprevencion.com"),
   title: "Saetas Prevención | Consultoría SYSO para Latinoamérica",
   description:
     "Empresa consultora en Salud y Seguridad Ocupacional con presencia en Bolivia, Costa Rica y toda LATAM. Capacitaciones, asesoría, planes de emergencia y más.",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Saetas Prevención — SYSO para toda Latinoamérica",
     description:
       "Consultoría profesional en Salud y Seguridad Ocupacional — Bolivia, Costa Rica y LATAM",
-    url: "https://saetaprevencion.com",
+    url: "https://www.saetasprevencion.com",
     siteName: "Saetas Prevención",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     locale: "es_LA",
