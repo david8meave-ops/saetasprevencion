@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import Hero from "@/components/sections/Hero";
 import SobreNosotros from "@/components/sections/SobreNosotros";
+import Clientes from "@/components/sections/Clientes";
 import Servicios from "@/components/sections/Servicios";
 import Descargables from "@/components/sections/Descargables";
 import TiendaEnLinea from "@/components/sections/TiendaEnLinea";
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <SobreNosotros />
+      <Clientes />
       <Servicios />
       <Descargables />
       <TiendaEnLinea />

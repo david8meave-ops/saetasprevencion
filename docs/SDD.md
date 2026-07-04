@@ -134,6 +134,11 @@ beta.
 - [x] Env vars in Vercel (Production + Preview)
 
 ### Phase 1 — V1 launch: content & credibility 🔜 CURRENT
+- [ ] **"Clientes" section** — customer-logo marquee (design ported from owner's Lovable
+      project "Happy Client Showcase"): dark section, "Clientes Felices" badge, infinite
+      logo carousel with grayscale→color hover. Ships with sector placeholders; **owner
+      must provide the real client list + authorized logo files** (`/public/clientes/`)
+      before it can show company names. Never display unverified/invented clients.
 - [ ] Real content pass on every section (replace demo/placeholder copy)
 - [ ] Real product/service photos (replace image placeholders)
 - [ ] `og-image.png` (referenced in metadata but missing — breaks social sharing)

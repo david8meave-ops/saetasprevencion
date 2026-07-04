@@ -59,6 +59,12 @@
   /* Brand animations */
   --animate-float: float 3s ease-in-out infinite;
   --animate-pulse-slow: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
