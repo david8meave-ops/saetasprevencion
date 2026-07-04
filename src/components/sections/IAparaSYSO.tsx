@@ -109,7 +109,7 @@ export default function IAparaSYSO() {
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} gap-3`}
               >
                 {msg.role === "assistant" && (
-                  <Image src="/logo.svg" alt="SP" width={32} height={32} className="rounded-full bg-white p-0.5 flex-shrink-0 mt-1" />
+                  <Image src="/logo.webp" alt="SP" width={32} height={32} className="rounded-full bg-white p-0.5 flex-shrink-0 mt-1" />
                 )}
                 <div
                   className="max-w-[80%] px-4 py-3 rounded-2xl text-sm leading-relaxed"
@@ -125,7 +125,7 @@ export default function IAparaSYSO() {
             ))}
             {isLoading && (
               <div className="flex justify-start gap-3">
-                <Image src="/logo.svg" alt="SP" width={32} height={32} className="rounded-full bg-white p-0.5 flex-shrink-0" />
+                <Image src="/logo.webp" alt="SP" width={32} height={32} className="rounded-full bg-white p-0.5 flex-shrink-0" />
                 <TypingIndicator />
               </div>
             )}

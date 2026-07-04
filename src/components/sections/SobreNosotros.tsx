@@ -124,11 +124,11 @@ export default function SobreNosotros() {
             style={{ backgroundColor: "#0D1B2A" }}
           >
             <Image
-              src="/logo.svg"
+              src="/logo.webp"
               alt="Saetas Prevención"
               width={72}
               height={72}
-              className="mx-auto mb-4"
+              className="bg-white rounded-full p-1 mx-auto mb-4"
             />
             <h3 className="text-white text-xl font-bold mb-2">Saetas Prevención</h3>
             <p className="text-[#A0AEC0] text-sm mb-6">

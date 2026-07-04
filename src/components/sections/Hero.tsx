@@ -53,10 +53,11 @@ export default function Hero() {
             style={{ filter: "drop-shadow(0 0 30px rgba(0, 168, 120, 0.4))" }}
           >
             <Image
-              src="/logo.svg"
+              src="/logo.webp"
               alt="Saetas Prevención"
               width={128}
               height={128}
+              className="bg-white rounded-full p-2"
             />
           </div>
         </motion.div>

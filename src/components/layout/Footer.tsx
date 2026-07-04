@@ -18,10 +18,11 @@ export default function Footer() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3">
             <Image
-              src="/logo.svg"
+              src="/logo.webp"
               alt="Saetas Prevención"
               width={52}
               height={52}
+              className="bg-white rounded-full p-1"
             />
             <span className="text-2xl font-bold">Saetas Prevención</span>
           </div>

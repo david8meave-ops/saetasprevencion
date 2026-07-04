@@ -46,10 +46,11 @@ export default function Navbar() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 group">
             <Image
-              src="/logo.svg"
+              src="/logo.webp"
               alt="Saetas Prevención"
               width={44}
               height={44}
+              className="rounded-full bg-white p-0.5"
             />
             <span className="text-white font-bold text-lg hidden sm:block group-hover:text-[#00A878] transition-colors">
               Saetas Prevención
