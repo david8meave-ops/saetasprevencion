@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactoInfo() {
   return (
@@ -18,10 +18,10 @@ export default function ContactoInfo() {
                 ¿Tienes una pregunta o comentario sobre un servicio de Saetas Prevención?
               </p>
               <a
-                href="/contacto"
-                className="inline-flex items-center gap-1 text-sm font-semibold text-[#006B52] hover:gap-2 transition-all"
+                href="mailto:info@saetasprevencion.com"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-[#006B52] hover:underline"
               >
-                Envíanos un correo <ArrowRight size={14} />
+                info@saetasprevencion.com
               </a>
             </div>
 
