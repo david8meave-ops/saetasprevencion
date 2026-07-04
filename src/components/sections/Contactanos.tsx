@@ -55,13 +55,10 @@ export default function Contactanos() {
     <section id="contacto" className="py-20 bg-white">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
-            Contáctanos
-          </span>
           <h1 className="text-3xl sm:text-4xl font-bold text-[#16294F]">
-            Hablemos de tu Proyecto
+            Contáctanos
           </h1>
-          <p className="text-[#4A5568] mt-2">
+          <p className="text-lg text-[#4A5568] mt-3 max-w-xl mx-auto">
             Cuéntanos tu situación y te respondemos en menos de 24 horas
           </p>
         </div>

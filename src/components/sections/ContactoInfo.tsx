@@ -48,34 +48,52 @@ export default function ContactoInfo() {
               </div>
             </div>
 
-            {/* Dirección */}
+            {/* Direcciones */}
             <div>
-              <div className="flex items-center justify-between gap-2 pb-3 border-b border-gray-200 mb-4">
-                <div className="flex items-center gap-2.5">
-                  <MapPin size={20} className="text-[#16294F]" />
-                  <h3 className="font-semibold text-[#16294F]">Dirección</h3>
+              <div className="flex items-center gap-2.5 pb-3 border-b border-gray-200 mb-4">
+                <MapPin size={20} className="text-[#16294F]" />
+                <h3 className="font-semibold text-[#16294F]">Direcciones</h3>
+              </div>
+
+              <div className="space-y-5">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <p className="text-xs font-bold uppercase tracking-wide text-[#006B52]">
+                      Bolivia
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Calle+20+de+Octubre+Edificio+La+Paz+202,+La+Paz,+Bolivia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-[#006B52] hover:underline whitespace-nowrap"
+                    >
+                      Ver en Google Maps
+                    </a>
+                  </div>
+                  <p className="text-sm text-[#4A5568] leading-relaxed">
+                    La Paz, Calle 20 de Octubre, Edificio La Paz 202
+                  </p>
                 </div>
-                <a
-                  href="https://www.google.com/maps/place/16%C2%B031'00.8%22S+68%C2%B005'19.1%22W/@-16.5168765,-68.0908216,17z"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-semibold text-[#006B52] hover:underline whitespace-nowrap"
-                >
-                  Enlace de Google Maps
-                </a>
+
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <p className="text-xs font-bold uppercase tracking-wide text-[#006B52]">
+                      Costa Rica
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Calle+Nuestro+Amo,+Natura+Viva+9,+La+Guacima,+Alajuela,+Costa+Rica"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-semibold text-[#006B52] hover:underline whitespace-nowrap"
+                    >
+                      Ver en Google Maps
+                    </a>
+                  </div>
+                  <p className="text-sm text-[#4A5568] leading-relaxed">
+                    Alajuela, La Guacima, Calle Nuestro Amo, Natura Viva 9
+                  </p>
+                </div>
               </div>
-              <div className="rounded-md overflow-hidden border border-gray-200 mb-3">
-                <iframe
-                  title="Ubicación de Saetas Prevención en La Paz"
-                  src="https://maps.google.com/maps?q=-16.5168765,-68.0886329&z=16&output=embed"
-                  className="w-full h-40"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              </div>
-              <p className="text-sm text-[#4A5568] leading-relaxed">
-                Irpavi, Calle 14, Av. Costanera, Edificio Marianela N.º 7, Piso 4 — La Paz, Bolivia
-              </p>
             </div>
           </div>
         </div>
