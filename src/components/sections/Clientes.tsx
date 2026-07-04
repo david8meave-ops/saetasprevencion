@@ -43,15 +43,26 @@ const track = [...roster, ...roster];
 
 export default function Clientes() {
   return (
-    <section id="clientes" className="py-12" style={{ backgroundColor: "#F4F6F8" }}>
+    <section id="sobre-nosotros" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-medium text-[#4A5568] mb-8">
-          Más de <span className="font-bold text-[#16294F]">50 organizaciones</span> confían
-          en Saetas para transformar el cumplimiento en ventaja competitiva
-        </p>
+        <div className="max-w-3xl mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F] mb-6">
+            Expertos en Salud y Seguridad Ocupacional
+          </h2>
+          <p className="text-[#4A5568] leading-relaxed text-lg">
+            Saetas Prevención es una empresa de consultoría especializada en Salud y Seguridad
+            Ocupacional con presencia en Bolivia y Costa Rica.
+            Nuestro equipo de profesionales certificados ayuda a las organizaciones a proteger
+            a sus colaboradores, cumplir con la normativa legal vigente y construir una cultura
+            de prevención sólida y sostenible. Más de{" "}
+            <span className="font-semibold text-[#16294F]">50 organizaciones</span> confían en
+            Saetas para transformar el cumplimiento en ventaja competitiva.
+          </p>
+        </div>
 
         {/* Marquesina */}
         <div
+          id="clientes"
           className="relative overflow-hidden"
           style={{
             maskImage:
@@ -65,15 +76,15 @@ export default function Clientes() {
               <div
                 key={`${c.name}-${i}`}
                 title={c.name}
-                className="group mr-5 flex h-20 w-44 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white px-5 transition-all duration-300 hover:border-[#006B52]/50 hover:shadow-sm"
+                className="group mr-5 flex h-[104px] w-48 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white px-5 transition-all duration-300 hover:border-[#006B52]/50 hover:shadow-sm"
               >
                 {c.logo ? (
                   <Image
                     src={c.logo}
                     alt={`Logo de ${c.name}`}
-                    width={140}
-                    height={44}
-                    className="max-h-11 w-auto max-w-full object-contain opacity-85 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    width={160}
+                    height={58}
+                    className="max-h-[58px] w-auto max-w-full object-contain opacity-85 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                   />
                 ) : (
                   <span className="text-sm font-semibold text-[#4A5568]">{c.name}</span>
