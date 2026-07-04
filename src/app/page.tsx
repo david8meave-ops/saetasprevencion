@@ -7,7 +7,6 @@ import ServiciosRecientes from "@/components/sections/ServiciosRecientes";
 import Servicios from "@/components/sections/Servicios";
 import Clientes from "@/components/sections/Clientes";
 import CtaBand from "@/components/sections/CtaBand";
-import AcercaDe from "@/components/sections/AcercaDe";
 import CookieBanner from "@/components/ui/CookieBanner";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
       <Servicios />
       <Clientes />
       <CtaBand />
-      <AcercaDe />
       <Footer />
       <FloatingActions />
       <CookieBanner />

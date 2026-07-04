@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 // lucide ya no incluye iconos de marcas — SVGs propios.
@@ -24,7 +24,7 @@ const columnas = [
   {
     title: "Empresa",
     links: [
-      { label: "Sobre Nosotros", href: "/#sobre-nosotros" },
+      { label: "Sobre Nosotros", href: "/sobre-nosotros" },
       { label: "Servicios", href: "/#servicios" },
       { label: "Trabajos recientes", href: "/#trabajos" },
       { label: "Contáctanos", href: "/contacto" },
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-10 mb-12">
           {columnas.map((col) => (
             <div key={col.title}>
               <h3 className="text-[#00C896] font-semibold mb-4 text-sm uppercase tracking-wide">
@@ -90,31 +90,6 @@ export default function Footer() {
               </ul>
             </div>
           ))}
-
-          {/* Contacto */}
-          <div>
-            <h3 className="text-[#00C896] font-semibold mb-4 text-sm uppercase tracking-wide">
-              Contacto
-            </h3>
-            <div className="space-y-2.5 text-sm">
-              <a href="https://wa.me/59160547193" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/60 hover:text-[#00C896] transition-colors">
-                <Phone size={14} /> Bolivia +591 60547193
-              </a>
-              <a href="https://wa.me/50670844241" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/60 hover:text-[#00C896] transition-colors">
-                <Phone size={14} /> Costa Rica +506 70844241
-              </a>
-              <a href="mailto:info@saetasprevencion.com"
-                className="flex items-center gap-2 text-white/60 hover:text-[#00C896] transition-colors">
-                <Mail size={14} /> info@saetasprevencion.com
-              </a>
-              <p className="flex items-start gap-2 text-white/60">
-                <MapPin size={14} className="mt-0.5 shrink-0" />
-                Irpavi, Calle 14, Av. Costanera, Edificio Marianela N.º 7, Piso 4 — La Paz, Bolivia
-              </p>
-            </div>
-          </div>
 
           {/* Síguenos */}
           <div>
