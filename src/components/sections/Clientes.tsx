@@ -43,17 +43,14 @@ const roster: { name: string; logo?: string }[] = [
   { name: "Top Service", logo: "/clientes/top-service.webp" },
   { name: "Vida Sana", logo: "/clientes/vida-sana.webp" },
   { name: "Mi Chola Restaurante", logo: "/clientes/mi-chola.webp" },
-  // Sin logo disponible en línea — tarjeta de texto hasta que el cliente provea el archivo.
-  { name: "Macabeo" },
-  { name: "El Asador" },
-  { name: "Sillpich's" },
-  { name: "Eirene" },
-  { name: "Minera D'Cobre S.A." },
-  { name: "Laboratorio Torrez" },
-  { name: "Manti Ingeniería" },
-  { name: "Constructora Patrias" },
-  { name: "Constructora Torre Nueva" },
-  { name: "Asociación Accidental Triunfo" },
+  { name: "Macabeo Pastelería", logo: "/clientes/macabeo.webp" },
+  { name: "El Asador", logo: "/clientes/el-asador.webp" },
+  { name: "Sillpich's", logo: "/clientes/sillpichs.webp" },
+  { name: "Laboratorio Torres", logo: "/clientes/laboratorio-torres.webp" },
+  { name: "Manti Ingeniería Ltda.", logo: "/clientes/manti-ingenieria.webp" },
+  // Pendientes de logo (fuera del reel hasta tener el archivo):
+  // Eirene, Minera D'Cobre S.A., Constructora Patrias,
+  // Constructora Torre Nueva, Asociación Accidental Triunfo.
 ];
 
 // Duplicado para que el loop de la marquesina sea continuo.
