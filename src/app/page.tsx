@@ -3,11 +3,11 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
 import Hero from "@/components/sections/Hero";
-import Clientes from "@/components/sections/Clientes";
+import ServiciosRecientes from "@/components/sections/ServiciosRecientes";
 import Servicios from "@/components/sections/Servicios";
-import IndustriaReel from "@/components/sections/IndustriaReel";
+import Clientes from "@/components/sections/Clientes";
 import CtaBand from "@/components/sections/CtaBand";
-import Contactanos from "@/components/sections/Contactanos";
+import AcercaDe from "@/components/sections/AcercaDe";
 import CookieBanner from "@/components/ui/CookieBanner";
 
 export default function Home() {
@@ -15,11 +15,11 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <Clientes />
+      <ServiciosRecientes />
       <Servicios />
-      <IndustriaReel />
+      <Clientes />
       <CtaBand />
-      <Contactanos />
+      <AcercaDe />
       <Footer />
       <FloatingActions />
       <CookieBanner />

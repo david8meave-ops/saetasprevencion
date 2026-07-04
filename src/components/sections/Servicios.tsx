@@ -54,7 +54,7 @@ export default function Servicios() {
                   {service.desc}
                 </p>
                 <a
-                  href="#contacto"
+                  href="/contacto"
                   className="inline-flex items-center gap-1 text-xs font-semibold text-[#006B52] hover:gap-2 transition-all"
                 >
                   Solicitar <ArrowRight size={13} />

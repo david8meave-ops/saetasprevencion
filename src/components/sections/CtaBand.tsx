@@ -18,7 +18,7 @@ export default function CtaBand() {
             normativa de tu país.
           </p>
           <a
-            href="#contacto"
+            href="/contacto"
             className="inline-block px-8 py-3.5 rounded-md font-semibold text-base text-white transition-colors hover:bg-[#00553F]"
             style={{ backgroundColor: "#006B52" }}
           >

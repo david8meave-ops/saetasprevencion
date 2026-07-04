@@ -43,26 +43,20 @@ const track = [...roster, ...roster];
 
 export default function Clientes() {
   return (
-    <section id="sobre-nosotros" className="py-20 bg-white">
+    <section id="clientes" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F] mb-6">
-            Expertos en Salud y Seguridad Ocupacional
-          </h2>
-          <p className="text-[#4A5568] leading-relaxed text-lg">
-            Saetas Prevención es una empresa de consultoría especializada en Salud y Seguridad
-            Ocupacional con presencia en Bolivia y Costa Rica.
-            Nuestro equipo de profesionales certificados ayuda a las organizaciones a proteger
-            a sus colaboradores, cumplir con la normativa legal vigente y construir una cultura
-            de prevención sólida y sostenible. Más de{" "}
-            <span className="font-semibold text-[#16294F]">50 organizaciones</span> confían en
-            Saetas para transformar el cumplimiento en ventaja competitiva.
+        <div className="text-center mb-10">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
+            Nuestros Clientes
+          </span>
+          <p className="text-lg text-[#4A5568] max-w-2xl mx-auto">
+            Más de <span className="font-bold text-[#16294F]">50 organizaciones</span> confían
+            en Saetas para transformar el cumplimiento en ventaja competitiva
           </p>
         </div>
 
         {/* Marquesina */}
         <div
-          id="clientes"
           className="relative overflow-hidden"
           style={{
             maskImage:

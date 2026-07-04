@@ -136,7 +136,7 @@ export default function CheckoutModal({ isOpen, onClose }: { isOpen: boolean; on
 
                   <div className="text-center">
                     <p className="text-[#A0AEC0] text-xs">¿Prefieres transferencia bancaria?</p>
-                    <a href="/#contacto" onClick={onClose} className="text-[#00A878] text-xs hover:underline">Contáctanos directamente</a>
+                    <a href="/contacto" onClick={onClose} className="text-[#00A878] text-xs hover:underline">Contáctanos directamente</a>
                   </div>
 
                   <button onClick={() => setStep("info")} className="w-full py-2 text-[#A0AEC0] text-sm hover:text-white transition-colors">
