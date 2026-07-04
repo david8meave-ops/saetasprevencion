@@ -1,37 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
   <defs>
-    <linearGradient id="tealGrad" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#00C896"/>
       <stop offset="100%" stop-color="#007A6E"/>
     </linearGradient>
-    <linearGradient id="sideGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#00A878"/>
-      <stop offset="100%" stop-color="#1A2E6E"/>
-    </linearGradient>
-    <path id="saetasArc" d="M 44,76 A 88,88 0 0,1 196,76"/>
-    <path id="prevencionArc" d="M 44,164 A 88,88 0 0,1 196,164"/>
   </defs>
-
-  <!-- Top arc - bright green -->
-  <path d="M 64,88 A 65,65 0 0,1 176,88" fill="none" stroke="#00C896" stroke-width="18" stroke-linecap="round"/>
-  <!-- Left arc -->
-  <path d="M 64,88 A 65,65 0 0,0 64,152" fill="none" stroke="url(#sideGrad)" stroke-width="18" stroke-linecap="round"/>
-  <!-- Right arc -->
-  <path d="M 176,88 A 65,65 0 0,1 176,152" fill="none" stroke="url(#sideGrad)" stroke-width="18" stroke-linecap="round"/>
-  <!-- Bottom arc - dark navy -->
-  <path d="M 64,152 A 65,65 0 0,0 176,152" fill="none" stroke="#1A2E6E" stroke-width="18" stroke-linecap="round"/>
-
+  <!-- Outer shield -->
+  <path d="M120 12 L210 45 V118 C210 177 173 216 120 232 C67 216 30 177 30 118 V45 Z" fill="url(#shieldGrad)"/>
+  <!-- Inner shield -->
+  <path d="M120 30 L193 57 V116 C193 165 163 198 120 212 C77 198 47 165 47 116 V57 Z" fill="#0D1B2A"/>
   <!-- Medical cross -->
-  <rect x="107" y="88" width="26" height="64" rx="6" fill="url(#tealGrad)"/>
-  <rect x="88" y="107" width="64" height="26" rx="6" fill="url(#tealGrad)"/>
-
-  <!-- SAETAS text arced at top -->
-  <text font-size="21" font-weight="900" font-family="Arial Black, Impact, sans-serif" fill="#0D0D0D" letter-spacing="5">
-    <textPath href="#saetasArc" startOffset="50%" text-anchor="middle">SAETAS</textPath>
-  </text>
-
-  <!-- PREVENCIÓN text arced at bottom -->
-  <text font-size="13" font-weight="700" font-family="Arial Black, Impact, sans-serif" fill="#0D0D0D" letter-spacing="2">
-    <textPath href="#prevencionArc" startOffset="50%" text-anchor="middle">PREVENCIÓN</textPath>
-  </text>
+  <rect x="105" y="78" width="30" height="88" rx="9" fill="#FFFFFF"/>
+  <rect x="76" y="107" width="88" height="30" rx="9" fill="#FFFFFF"/>
 </svg>

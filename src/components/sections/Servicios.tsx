@@ -1,19 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  Shield, FileText, Search, GraduationCap,
-  AlertTriangle, Activity, ClipboardCheck, Briefcase,
+  Shield, FileText, GraduationCap, Map,
+  AlertTriangle, Activity, ClipboardCheck, Zap, Flame, Scale,
 } from "lucide-react";
 
 const services = [
-  { icon: Shield, title: "Asesoría en Comisiones de Salud Ocupacional", desc: "Constitución, capacitación y seguimiento de comisiones SYSO conforme a la normativa local." },
-  { icon: FileText, title: "Elaboración de Reglamentos y Políticas", desc: "Documentos legales y procedimientos internos adaptados a cada empresa y país." },
-  { icon: Search, title: "Investigación y Análisis de Accidentes", desc: "Metodología sistemática para identificar causas y evitar recurrencias." },
-  { icon: GraduationCap, title: "Capacitaciones SYSO", desc: "Formación presencial y virtual para todos los niveles de la organización." },
-  { icon: AlertTriangle, title: "Planes de Emergencia y Evacuación", desc: "Diseño, implementación y simulacros de planes de respuesta ante emergencias." },
-  { icon: Activity, title: "Evaluación y Gestión de Riesgos", desc: "Identificación, valoración y control de peligros en el ambiente laboral." },
-  { icon: ClipboardCheck, title: "Auditorías de Seguridad", desc: "Diagnóstico del sistema de gestión SYSO con recomendaciones concretas." },
-  { icon: Briefcase, title: "Trámites y Permisos Legales", desc: "Gestión ante instituciones gubernamentales para cumplimiento normativo." },
+  { icon: Shield, title: "Programas de Seguridad y Salud en el Trabajo (NTS-009)", desc: "Elaboración e implementación de programas SST conforme a la Norma Técnica de Seguridad NTS-009." },
+  { icon: Activity, title: "Monitoreos Ocupacionales", desc: "Mediciones de agentes físicos, químicos y ergonómicos en el ambiente de trabajo." },
+  { icon: Zap, title: "Planos Eléctricos", desc: "Elaboración y regularización de planos eléctricos para instalaciones industriales y comerciales." },
+  { icon: Map, title: "Planos de Evacuación", desc: "Diseño de planos y rutas de evacuación conforme a los requisitos normativos." },
+  { icon: Flame, title: "Estudio de Carga de Fuego", desc: "Cálculo y evaluación de carga de fuego para la prevención y protección contra incendios." },
+  { icon: AlertTriangle, title: "Señalética de Seguridad (RM 849/14)", desc: "Provisión e instalación de señalización de seguridad según la Resolución Ministerial 849/14." },
+  { icon: Scale, title: "Asesoría Legal ante el MTEPS", desc: "Respuesta a informes de inspección del Ministerio de Trabajo, Empleo y Previsión Social." },
+  { icon: FileText, title: "Plantillas de Capacitación SST", desc: "Plantillas de capacitaciones en Seguridad y Salud en el Trabajo totalmente editables." },
+  { icon: ClipboardCheck, title: "Aplicativos de Documentación", desc: "Aplicativos de documentación SYSO totalmente editables para tu gestión interna." },
+  { icon: GraduationCap, title: "Formación Profesional (RM 0329/21)", desc: "Cursos y diplomados de formación profesional con respaldo de la RM 0329/21." },
 ];
 
 export default function Servicios() {
@@ -99,7 +101,7 @@ export default function Servicios() {
           >
             🌎 Atendemos:{" "}
             <span style={{ color: "#00A878" }}>
-              Bolivia · Costa Rica · Perú · Colombia · Ecuador · Guatemala · Honduras · Panamá · y más
+              Bolivia 🇧🇴 · Costa Rica 🇨🇷
             </span>
           </div>
         </motion.div>

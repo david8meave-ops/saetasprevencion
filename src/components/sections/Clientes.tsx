@@ -67,15 +67,11 @@ export default function Clientes() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-2xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#1A3550]/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#00C896] backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#00A878] shadow-[0_0_12px_#00A878]" />
-            Clientes Felices
-          </span>
-          <h2 className="mt-6 text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Empresas que <span className="text-[#00C896]">protegen</span> a su gente con Saetas
           </h2>
           <p className="mt-4 text-lg text-[#A0AEC0]">
-            Más de 50 organizaciones en Latinoamérica confían en nuestra consultoría SYSO.
+            Más de 50 organizaciones confían en Saetas para transformar el cumplimiento en ventaja competitiva.
           </p>
         </motion.div>
 

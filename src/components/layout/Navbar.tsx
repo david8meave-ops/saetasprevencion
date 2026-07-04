@@ -1,23 +1,29 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingCart } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { useCart } from "@/context/CartContext";
 
 const navLinks = [
-  { label: "Sobre Nosotros", href: "#sobre-nosotros" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Descargables", href: "#descargables" },
-  { label: "Tienda en Línea", href: "#tienda" },
-  { label: "IA para SYSO", href: "#ia-syso" },
-  { label: "Contáctanos", href: "#contacto" },
+  { label: "Sobre Nosotros", href: "/#sobre-nosotros" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Descargables", href: "/descargables", soon: true },
+  { label: "Tienda en Línea", href: "/tienda", soon: true },
+  { label: "IA para SYSO", href: "/ia-syso", soon: true },
+  { label: "Contáctanos", href: "/#contacto" },
 ];
+
+function SoonBadge() {
+  return (
+    <span className="ml-1.5 align-middle text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-[#F5C518] text-[#0D1B2A]">
+      Pronto
+    </span>
+  );
+}
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { itemCount, openCart } = useCart();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -38,13 +44,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="/" className="flex items-center gap-3 group">
             <Image
               src="/logo.svg"
               alt="Saetas Prevención"
               width={44}
               height={44}
-              className="rounded-full bg-white p-0.5"
             />
             <span className="text-white font-bold text-lg hidden sm:block group-hover:text-[#00A878] transition-colors">
               Saetas Prevención
@@ -60,6 +65,7 @@ export default function Navbar() {
                 className="text-[#A0AEC0] hover:text-[#00A878] transition-colors text-sm font-medium"
               >
                 {link.label}
+                {link.soon && <SoonBadge />}
               </a>
             ))}
           </div>
@@ -89,20 +95,6 @@ export default function Navbar() {
               <span>🇨🇷</span>
               <span className="hidden md:inline text-xs">Costa Rica</span>
             </a>
-
-            {/* Cart */}
-            <button
-              onClick={openCart}
-              aria-label="Abrir carrito"
-              className="relative p-2 text-white hover:text-[#00A878] transition-colors"
-            >
-              <ShoppingCart size={20} />
-              {itemCount > 0 && (
-                <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#00A878] text-white text-xs font-bold flex items-center justify-center">
-                  {itemCount}
-                </span>
-              )}
-            </button>
 
             {/* Mobile menu button */}
             <button
@@ -135,6 +127,7 @@ export default function Navbar() {
                   className="block py-2 text-[#A0AEC0] hover:text-[#00A878] transition-colors text-sm font-medium"
                 >
                   {link.label}
+                  {link.soon && <SoonBadge />}
                 </a>
               ))}
               <div className="pt-4 border-t border-[#00A878]/20 flex gap-3">

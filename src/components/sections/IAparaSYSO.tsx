@@ -152,7 +152,7 @@ export default function IAparaSYSO() {
             {messageCount >= MAX_MESSAGES ? (
               <div className="flex-1 text-center text-[#A0AEC0] text-sm py-2">
                 Límite de consultas alcanzado.{" "}
-                <a href="#contacto" className="text-[#00A878] hover:underline">Contáctanos</a> para asesoría personalizada.
+                <a href="/#contacto" className="text-[#00A878] hover:underline">Contáctanos</a> para asesoría personalizada.
               </div>
             ) : (
               <>
@@ -180,7 +180,7 @@ export default function IAparaSYSO() {
 
         <p className="text-center text-[#A0AEC0] text-xs mt-4 max-w-2xl mx-auto">
           Este asistente ofrece información general sobre normativa SYSO. Para asesoría específica a tu empresa y país,{" "}
-          <a href="#contacto" className="text-[#00A878] hover:underline">contáctanos directamente</a>.
+          <a href="/#contacto" className="text-[#00A878] hover:underline">contáctanos directamente</a>.
         </p>
       </div>
     </section>

@@ -2,19 +2,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const stats = [
-  { value: "50+", label: "Empresas Asesoradas" },
-  { value: "5+", label: "Países Atendidos" },
-  { value: "200+", label: "Capacitaciones Realizadas" },
-];
-
-const values = [
-  { icon: "⭐", title: "Profesionalismo", desc: "Equipo certificado con experiencia comprobada en SYSO." },
-  { icon: "🤝", title: "Compromiso", desc: "Nos comprometemos con la seguridad de cada colaborador." },
-  { icon: "💡", title: "Innovación", desc: "Soluciones modernas adaptadas a cada realidad empresarial." },
-  { icon: "🔒", title: "Confianza", desc: "Relaciones duraderas basadas en resultados reales." },
-];
-
 function LatamMap() {
   return (
     <svg viewBox="0 0 320 520" className="w-full max-w-xs mx-auto">
@@ -104,7 +91,7 @@ export default function SobreNosotros() {
       style={{ backgroundColor: "#F7F9FC" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -116,11 +103,11 @@ export default function SobreNosotros() {
               Sobre Nosotros
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] mb-6">
-              Expertos en Seguridad Ocupacional para Latinoamérica
+              Expertos en Salud y Seguridad Ocupacional
             </h2>
             <p className="text-gray-600 leading-relaxed text-lg">
               Saetas Prevención es una empresa de consultoría especializada en Salud y Seguridad
-              Ocupacional con presencia en Bolivia, Costa Rica y toda la región latinoamericana.
+              Ocupacional con presencia en Bolivia y Costa Rica.
               Nuestro equipo de profesionales certificados ayuda a las organizaciones a proteger
               a sus colaboradores, cumplir con la normativa legal vigente y construir una cultura
               de prevención sólida y sostenible.
@@ -141,57 +128,15 @@ export default function SobreNosotros() {
               alt="Saetas Prevención"
               width={72}
               height={72}
-              className="bg-white rounded-full p-1 mx-auto mb-4"
+              className="mx-auto mb-4"
             />
             <h3 className="text-white text-xl font-bold mb-2">Saetas Prevención</h3>
             <p className="text-[#A0AEC0] text-sm mb-6">
               Prevenimos riesgos. Protegemos vidas.
             </p>
-            <p className="text-[#00A878] text-sm font-semibold mb-4">Presencia LATAM</p>
+            <p className="text-[#00A878] text-sm font-semibold mb-4">Bolivia · Costa Rica</p>
             <LatamMap />
           </motion.div>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="text-center p-6 rounded-xl"
-              style={{
-                backgroundColor: "white",
-                border: "2px solid #00A878",
-                boxShadow: "0 4px 20px rgba(0, 168, 120, 0.12)",
-              }}
-            >
-              <div className="text-4xl font-bold mb-2" style={{ color: "#00A878" }}>
-                {stat.value}
-              </div>
-              <div className="text-[#0D1B2A] font-medium">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Values */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((val, i) => (
-            <motion.div
-              key={val.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="p-6 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow"
-            >
-              <div className="text-3xl mb-3">{val.icon}</div>
-              <h3 className="font-bold text-[#0D1B2A] mb-2">{val.title}</h3>
-              <p className="text-gray-500 text-sm">{val.desc}</p>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>

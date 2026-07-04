@@ -6,13 +6,6 @@ import Image from "next/image";
 const latamFlags = [
   { flag: "🇧🇴", country: "Bolivia" },
   { flag: "🇨🇷", country: "Costa Rica" },
-  { flag: "🇨🇴", country: "Colombia" },
-  { flag: "🇵🇪", country: "Perú" },
-  { flag: "🇪🇨", country: "Ecuador" },
-  { flag: "🇬🇹", country: "Guatemala" },
-  { flag: "🇭🇳", country: "Honduras" },
-  { flag: "🇵🇦", country: "Panamá" },
-  { flag: "🇲🇽", country: "México" },
 ];
 
 export default function Hero() {
@@ -64,7 +57,6 @@ export default function Hero() {
               alt="Saetas Prevención"
               width={128}
               height={128}
-              className="bg-white rounded-full p-1"
             />
           </div>
         </motion.div>
@@ -88,8 +80,7 @@ export default function Hero() {
           className="text-lg sm:text-xl lg:text-2xl mb-10 max-w-3xl mx-auto"
           style={{ color: "#00C896" }}
         >
-          Consultoría profesional en Salud y Seguridad Ocupacional para toda
-          Latinoamérica
+          Consultoría profesional en Salud y Seguridad Ocupacional
         </motion.p>
 
         {/* LATAM flags strip */}

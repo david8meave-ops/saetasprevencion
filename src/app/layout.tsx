@@ -7,15 +7,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.saetasprevencion.com"),
-  title: "Saetas Prevención | Consultoría SYSO para Latinoamérica",
+  title: "Saetas Prevención | Consultoría en Salud y Seguridad Ocupacional",
   description:
-    "Empresa consultora en Salud y Seguridad Ocupacional con presencia en Bolivia, Costa Rica y toda LATAM. Capacitaciones, asesoría, planes de emergencia y más.",
+    "Empresa consultora en Salud y Seguridad Ocupacional con presencia en Bolivia y Costa Rica. Programas SST, monitoreos ocupacionales, capacitaciones y más.",
   keywords:
-    "salud ocupacional LATAM, seguridad industrial Bolivia, SYSO Costa Rica, consultoría SSO latinoamérica, Saetas Prevención",
+    "salud ocupacional Bolivia, seguridad industrial Bolivia, SYSO Costa Rica, consultoría SSO, NTS-009, Saetas Prevención",
   openGraph: {
-    title: "Saetas Prevención — SYSO para toda Latinoamérica",
+    title: "Saetas Prevención — Salud y Seguridad Ocupacional",
     description:
-      "Consultoría profesional en Salud y Seguridad Ocupacional — Bolivia, Costa Rica y LATAM",
+      "Consultoría profesional en Salud y Seguridad Ocupacional — Bolivia y Costa Rica",
     url: "https://www.saetasprevencion.com",
     siteName: "Saetas Prevención",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],

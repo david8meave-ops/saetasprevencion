@@ -2,12 +2,12 @@ import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
 
 const quickLinks = [
-  { label: "Sobre Nosotros", href: "#sobre-nosotros" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Descargables", href: "#descargables" },
-  { label: "Tienda en Línea", href: "#tienda" },
-  { label: "IA para SYSO", href: "#ia-syso" },
-  { label: "Contáctanos", href: "#contacto" },
+  { label: "Sobre Nosotros", href: "/#sobre-nosotros" },
+  { label: "Servicios", href: "/#servicios" },
+  { label: "Descargables", href: "/descargables", soon: true },
+  { label: "Tienda en Línea", href: "/tienda", soon: true },
+  { label: "IA para SYSO", href: "/ia-syso", soon: true },
+  { label: "Contáctanos", href: "/#contacto" },
 ];
 
 export default function Footer() {
@@ -22,7 +22,6 @@ export default function Footer() {
               alt="Saetas Prevención"
               width={52}
               height={52}
-              className="bg-white rounded-full p-1"
             />
             <span className="text-2xl font-bold">Saetas Prevención</span>
           </div>
@@ -34,8 +33,8 @@ export default function Footer() {
           <div>
             <h3 className="text-[#00A878] font-semibold mb-4">Nuestra Misión</h3>
             <p className="text-[#A0AEC0] text-sm leading-relaxed">
-              Empresa consultora en SYSO con presencia en Bolivia, Costa Rica y toda
-              Latinoamérica. Prevenimos riesgos y protegemos vidas.
+              Empresa consultora en SYSO con presencia en Bolivia y Costa Rica.
+              Prevenimos riesgos y protegemos vidas.
             </p>
           </div>
 
@@ -50,6 +49,11 @@ export default function Footer() {
                     className="text-[#A0AEC0] hover:text-[#00A878] transition-colors text-sm"
                   >
                     {link.label}
+                    {link.soon && (
+                      <span className="ml-1.5 text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-[#F5C518] text-[#0D1B2A]">
+                        Pronto
+                      </span>
+                    )}
                   </a>
                 </li>
               ))}
@@ -77,10 +81,10 @@ export default function Footer() {
                 <Phone size={14} /> 🇨🇷 +506 70844241
               </a>
               <a
-                href="mailto:saetasprevencion@gmail.com"
+                href="mailto:info@saetasprevencion.com"
                 className="flex items-center gap-2 text-[#A0AEC0] hover:text-[#00A878] transition-colors text-sm"
               >
-                <Mail size={14} /> saetasprevencion@gmail.com
+                <Mail size={14} /> info@saetasprevencion.com
               </a>
               <div className="flex gap-3 pt-2">
                 <a
@@ -92,15 +96,6 @@ export default function Footer() {
                 >
                   f
                 </a>
-                <a
-                  href="https://beacons.ai/saeta_"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Beacons"
-                  className="w-8 h-8 rounded-full bg-[#1A3550] flex items-center justify-center hover:bg-[#00A878] transition-all text-xs font-bold text-white"
-                >
-                  B
-                </a>
               </div>
             </div>
           </div>
@@ -111,7 +106,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#A0AEC0]">
-          <p>© 2025 Saetas Prevención — Bolivia · Costa Rica · LATAM. Todos los derechos reservados.</p>
+          <p>© 2026 Saetas Prevención — Bolivia · Costa Rica. Todos los derechos reservados.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-[#00A878] transition-colors">Política de Privacidad</a>
             <a href="#" className="hover:text-[#00A878] transition-colors">Términos de Uso</a>

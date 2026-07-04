@@ -4,20 +4,23 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, ContactFormData } from "@/lib/validations";
-import { Mail, Phone, ExternalLink, CheckCircle } from "lucide-react";
+import { Mail, Phone, CheckCircle } from "lucide-react";
 
 const services = [
-  "Asesoría en Comisiones de Salud Ocupacional",
-  "Elaboración de Reglamentos y Políticas",
-  "Investigación y Análisis de Accidentes",
-  "Capacitaciones SYSO",
-  "Planes de Emergencia y Evacuación",
-  "Evaluación y Gestión de Riesgos",
-  "Auditorías de Seguridad",
-  "Trámites y Permisos Legales",
+  "Programas de Seguridad y Salud en el Trabajo (NTS-009)",
+  "Monitoreos Ocupacionales",
+  "Planos Eléctricos",
+  "Planos de Evacuación",
+  "Estudio de Carga de Fuego",
+  "Señalética de Seguridad (RM 849/14)",
+  "Asesoría Legal ante el MTEPS",
+  "Plantillas de Capacitación SST",
+  "Aplicativos de Documentación",
+  "Formación Profesional (RM 0329/21)",
+  "Otro",
 ];
 
-const countries = ["Bolivia", "Costa Rica", "Colombia", "Perú", "Ecuador", "Guatemala", "Honduras", "Panamá", "México", "Otro"];
+const countries = ["Bolivia", "Costa Rica", "Otro"];
 
 export default function Contactanos() {
   const [submitted, setSubmitted] = useState(false);
@@ -141,43 +144,32 @@ export default function Contactanos() {
                   className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
                   <Phone size={16} className="text-[#00A878]" /> 🇧🇴 Bolivia: +591 60547193
                 </a>
+                <a href="https://wa.me/59175758622" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
+                  <Phone size={16} className="text-[#00A878]" /> 🇧🇴 Bolivia: +591 75758622
+                </a>
                 <a href="https://wa.me/50670844241" target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
                   <Phone size={16} className="text-[#00A878]" /> 🇨🇷 Costa Rica: +506 70844241
+                </a>
+                <a href="https://wa.me/50670387373" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
+                  <Phone size={16} className="text-[#00A878]" /> 🇨🇷 Costa Rica: +506 70387373
                 </a>
               </div>
             </div>
 
             {/* Contact links */}
             <div className="bg-white rounded-2xl p-6 shadow-sm space-y-4">
-              <a href="mailto:saetasprevencion@gmail.com"
+              <a href="mailto:info@saetasprevencion.com"
                 className="flex items-center gap-3 text-[#0D1B2A] hover:text-[#00A878] transition-colors text-sm">
-                <Mail size={18} className="text-[#00A878]" /> saetasprevencion@gmail.com
-              </a>
-              <a href="https://beacons.ai/saeta_" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#0D1B2A] hover:text-[#00A878] transition-colors text-sm">
-                <ExternalLink size={18} className="text-[#00A878]" /> beacons.ai/saeta_
+                <Mail size={18} className="text-[#00A878]" /> info@saetasprevencion.com
               </a>
               <a href="https://www.facebook.com/Saetaprevecion" target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 text-[#0D1B2A] hover:text-[#00A878] transition-colors text-sm">
                 <span className="w-[18px] h-[18px] rounded bg-[#00A878] text-[#0D1B2A] flex items-center justify-center text-xs font-bold flex-shrink-0">f</span>
                 Facebook: Saetas Prevención
               </a>
-            </div>
-
-            {/* PayPal */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm">
-              <h3 className="font-bold text-[#0D1B2A] mb-3">Pago rápido con PayPal</h3>
-              <a
-                href="https://www.paypal.me/saetasprevencion"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block w-full text-center py-3 rounded-xl font-bold text-sm transition-all hover:scale-[1.02]"
-                style={{ backgroundColor: "#003087", color: "white" }}
-              >
-                💳 Pagar con PayPal
-              </a>
-              <p className="text-xs text-gray-400 text-center mt-2">saetasprevencion@gmail.com</p>
             </div>
           </motion.div>
         </div>
