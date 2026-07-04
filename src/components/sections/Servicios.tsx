@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  Shield, FileText, GraduationCap, Map,
-  AlertTriangle, Activity, ClipboardCheck, Zap, Flame, Scale,
+  Shield, FileText, GraduationCap, Map, MapPin,
+  AlertTriangle, Activity, ClipboardCheck, Zap, Flame, Scale, ArrowRight,
 } from "lucide-react";
 
 const services = [
@@ -20,89 +20,60 @@ const services = [
 
 export default function Servicios() {
   return (
-    <section
-      id="servicios"
-      className="py-20"
-      style={{ backgroundColor: "#0D1B2A" }}
-    >
+    <section id="servicios" className="py-20" style={{ backgroundColor: "#F4F6F8" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <span className="text-sm font-semibold uppercase tracking-widest text-[#00A878] mb-3 block">
+        <div className="text-center mb-14">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
             Nuestros Servicios
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F] mb-4">
             Soluciones Integrales en SYSO
           </h2>
-          <p className="text-[#A0AEC0] max-w-2xl mx-auto">
-            Ofrecemos soluciones integrales de SYSO adaptadas a la normativa de cada país de la región
+          <p className="text-[#4A5568] max-w-2xl mx-auto">
+            Soluciones adaptadas a la normativa vigente de cada país
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           {services.map((service, i) => {
             const Icon = service.icon;
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                whileHover={{ scale: 1.03 }}
-                className="p-6 rounded-xl cursor-default transition-all group"
-                style={{
-                  backgroundColor: "#1A3550",
-                  border: "1px solid rgba(0,168,120,0.15)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.border = "1px solid rgba(0,168,120,0.6)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(0,168,120,0.15)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.border = "1px solid rgba(0,168,120,0.15)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                }}
+                transition={{ delay: i * 0.05 }}
+                className="p-6 rounded-lg bg-white border border-gray-200 transition-all duration-200 hover:border-[#006B52] hover:shadow-md flex flex-col"
               >
-                <div className="mb-4">
-                  <Icon size={32} className="text-[#00A878]" />
-                </div>
-                <h3 className="text-white font-semibold text-sm mb-3 leading-snug">
+                <Icon size={28} className="text-[#006B52] mb-4" />
+                <h3 className="text-[#16294F] font-semibold text-sm mb-2 leading-snug">
                   {service.title}
                 </h3>
-                <p className="text-[#A0AEC0] text-xs leading-relaxed mb-4">
+                <p className="text-[#4A5568] text-xs leading-relaxed mb-4 flex-1">
                   {service.desc}
                 </p>
                 <a
                   href="#contacto"
-                  className="inline-block text-xs font-semibold px-3 py-1.5 rounded-full transition-all hover:scale-105"
-                  style={{ backgroundColor: "#00A878", color: "#0D1B2A" }}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[#006B52] hover:gap-2 transition-all"
                 >
-                  Solicitar
+                  Solicitar <ArrowRight size={13} />
                 </a>
               </motion.div>
             );
           })}
         </div>
 
-        {/* Coverage badge */}
+        {/* Coverage */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <div
-            className="inline-block px-6 py-3 rounded-full text-sm"
-            style={{
-              backgroundColor: "#1A3550",
-              border: "1px solid rgba(0,168,120,0.3)",
-              color: "#A0AEC0",
-            }}
-          >
-            🌎 Atendemos:{" "}
-            <span style={{ color: "#00A878" }}>
-              Bolivia 🇧🇴 · Costa Rica 🇨🇷
-            </span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm bg-white border border-gray-200 text-[#4A5568]">
+            <MapPin size={15} className="text-[#006B52]" />
+            Atendemos <span className="font-semibold text-[#16294F]">Bolivia · Costa Rica</span>
           </div>
         </motion.div>
       </div>

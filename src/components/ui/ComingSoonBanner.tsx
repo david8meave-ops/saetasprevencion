@@ -2,14 +2,14 @@ import Link from "next/link";
 
 export default function ComingSoonBanner({ message }: { message?: string }) {
   return (
-    <div className="pt-24 pb-4" style={{ backgroundColor: "#0D1B2A" }}>
+    <div className="pt-32 pb-4 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3"
-          style={{ backgroundColor: "#1A3550", border: "1px solid #F5C518" }}
+          className="rounded-lg px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 border"
+          style={{ backgroundColor: "#FFFBEB", borderColor: "#F5C518" }}
         >
-          <p className="text-sm text-white text-center sm:text-left">
-            <span className="mr-2 font-bold uppercase tracking-wide text-[10px] px-2 py-1 rounded-full bg-[#F5C518] text-[#0D1B2A]">
+          <p className="text-sm text-[#16294F] text-center sm:text-left">
+            <span className="mr-2 font-bold uppercase tracking-wide text-[10px] px-2 py-1 rounded-full bg-[#F5C518] text-[#16294F]">
               Próximamente
             </span>
             {message ??
@@ -17,7 +17,7 @@ export default function ComingSoonBanner({ message }: { message?: string }) {
           </p>
           <Link
             href="/"
-            className="text-xs font-semibold text-[#00C896] hover:text-white transition-colors whitespace-nowrap"
+            className="text-xs font-semibold text-[#006B52] hover:text-[#16294F] transition-colors whitespace-nowrap"
           >
             ← Volver al inicio
           </Link>

@@ -87,8 +87,7 @@ export default function SobreNosotros() {
   return (
     <section
       id="sobre-nosotros"
-      className="py-20"
-      style={{ backgroundColor: "#F7F9FC" }}
+      className="py-20 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -99,13 +98,13 @@ export default function SobreNosotros() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-sm font-semibold uppercase tracking-widest text-[#00A878] mb-3 block">
+            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
               Sobre Nosotros
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A] mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F] mb-6">
               Expertos en Salud y Seguridad Ocupacional
             </h2>
-            <p className="text-gray-600 leading-relaxed text-lg">
+            <p className="text-[#4A5568] leading-relaxed text-lg">
               Saetas Prevención es una empresa de consultoría especializada en Salud y Seguridad
               Ocupacional con presencia en Bolivia y Costa Rica.
               Nuestro equipo de profesionales certificados ayuda a las organizaciones a proteger
@@ -120,8 +119,8 @@ export default function SobreNosotros() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="rounded-2xl p-8 text-center"
-            style={{ backgroundColor: "#0D1B2A" }}
+            className="rounded-lg p-8 text-center"
+            style={{ backgroundColor: "#16294F" }}
           >
             <Image
               src="/logo.webp"
@@ -131,10 +130,10 @@ export default function SobreNosotros() {
               className="bg-white rounded-full p-1 mx-auto mb-4"
             />
             <h3 className="text-white text-xl font-bold mb-2">Saetas Prevención</h3>
-            <p className="text-[#A0AEC0] text-sm mb-6">
+            <p className="text-white/60 text-sm mb-6">
               Prevenimos riesgos. Protegemos vidas.
             </p>
-            <p className="text-[#00A878] text-sm font-semibold mb-4">Bolivia · Costa Rica</p>
+            <p className="text-[#00C896] text-sm font-semibold mb-4">Bolivia · Costa Rica</p>
             <LatamMap />
           </motion.div>
         </div>

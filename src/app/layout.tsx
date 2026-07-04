@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 
 const inter = Inter({ subsets: ["latin"] });
+const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.saetasprevencion.com"),
@@ -31,12 +32,10 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {/* TODO: Replace G-XXXXXXXXXX with your Google Analytics 4 tracking ID */}
-        {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#0D1B2A" />
+        <meta name="theme-color" content="#16294F" />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} ${archivo.variable}`}>
         <CartProvider>
           {children}
         </CartProvider>

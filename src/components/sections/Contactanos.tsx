@@ -22,6 +22,10 @@ const services = [
 
 const countries = ["Bolivia", "Costa Rica", "Otro"];
 
+const inputClass =
+  "w-full px-3.5 py-2.5 rounded-md text-sm bg-white border border-gray-300 focus:outline-none focus:border-[#006B52] focus:ring-2 focus:ring-[#006B52]/15 transition-colors";
+const labelClass = "block text-sm font-medium text-[#16294F] mb-1.5";
+
 export default function Contactanos() {
   const [submitted, setSubmitted] = useState(false);
   const {
@@ -47,80 +51,96 @@ export default function Contactanos() {
     }
   };
 
-  const inputClass = "w-full px-4 py-3 rounded-lg text-sm focus:outline-none transition-colors";
-  const inputStyle = { backgroundColor: "#F7F9FC", border: "1px solid #e2e8f0" };
-
   return (
-    <section id="contacto" className="py-20" style={{ backgroundColor: "#F7F9FC" }}>
+    <section id="contacto" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <span className="text-sm font-semibold uppercase tracking-widest text-[#00A878] mb-3 block">Contáctanos</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0D1B2A]">Hablemos de tu Proyecto</h2>
-          <p className="text-gray-500 mt-2">Estamos listos para ayudarte a proteger a tu equipo</p>
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
+            Contáctanos
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F]">
+            Hablemos de tu Proyecto
+          </h2>
+          <p className="text-[#4A5568] mt-2">
+            Estamos listos para ayudarte a proteger a tu equipo
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact form */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-8 shadow-sm"
+            className="rounded-lg p-8 border border-gray-200"
+            style={{ backgroundColor: "#F4F6F8" }}
           >
             {submitted ? (
               <div className="text-center py-12">
-                <CheckCircle size={56} className="text-green-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-[#0D1B2A] mb-2">¡Mensaje enviado!</h3>
-                <p className="text-gray-500">Te contactaremos pronto. Gracias por tu interés en Saetas Prevención.</p>
-                <button onClick={() => setSubmitted(false)} className="mt-6 text-sm text-[#00A878] hover:underline">
+                <CheckCircle size={56} className="text-[#006B52] mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-[#16294F] mb-2">¡Mensaje enviado!</h3>
+                <p className="text-[#4A5568]">
+                  Te contactaremos pronto. Gracias por tu interés en Saetas Prevención.
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-6 text-sm text-[#006B52] hover:underline"
+                >
                   Enviar otro mensaje
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div>
-                  <input {...register("nombre")} placeholder="Nombre completo *" className={inputClass} style={inputStyle} />
-                  {errors.nombre && <p className="text-red-500 text-xs mt-1">{errors.nombre.message}</p>}
+                  <label htmlFor="nombre" className={labelClass}>Nombre completo *</label>
+                  <input id="nombre" {...register("nombre")} className={inputClass} />
+                  {errors.nombre && <p className="text-red-600 text-xs mt-1">{errors.nombre.message}</p>}
                 </div>
                 <div>
-                  <input {...register("empresa")} placeholder="Empresa / Organización *" className={inputClass} style={inputStyle} />
-                  {errors.empresa && <p className="text-red-500 text-xs mt-1">{errors.empresa.message}</p>}
+                  <label htmlFor="empresa" className={labelClass}>Empresa / Organización *</label>
+                  <input id="empresa" {...register("empresa")} className={inputClass} />
+                  {errors.empresa && <p className="text-red-600 text-xs mt-1">{errors.empresa.message}</p>}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <select {...register("pais")} className={inputClass + " bg-white"} style={inputStyle}>
-                      <option value="">País *</option>
+                    <label htmlFor="pais" className={labelClass}>País *</label>
+                    <select id="pais" {...register("pais")} className={inputClass}>
+                      <option value="">Selecciona…</option>
                       {countries.map(c => <option key={c} value={c}>{c}</option>)}
                     </select>
-                    {errors.pais && <p className="text-red-500 text-xs mt-1">{errors.pais.message}</p>}
+                    {errors.pais && <p className="text-red-600 text-xs mt-1">{errors.pais.message}</p>}
                   </div>
                   <div>
-                    <input {...register("telefono")} placeholder="Teléfono / WhatsApp *" className={inputClass} style={inputStyle} />
-                    {errors.telefono && <p className="text-red-500 text-xs mt-1">{errors.telefono.message}</p>}
+                    <label htmlFor="telefono" className={labelClass}>Teléfono / WhatsApp *</label>
+                    <input id="telefono" {...register("telefono")} className={inputClass} />
+                    {errors.telefono && <p className="text-red-600 text-xs mt-1">{errors.telefono.message}</p>}
                   </div>
                 </div>
                 <div>
-                  <input {...register("email")} type="email" placeholder="Correo electrónico *" className={inputClass} style={inputStyle} />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                  <label htmlFor="email" className={labelClass}>Correo electrónico *</label>
+                  <input id="email" {...register("email")} type="email" className={inputClass} />
+                  {errors.email && <p className="text-red-600 text-xs mt-1">{errors.email.message}</p>}
                 </div>
                 <div>
-                  <select {...register("servicio")} className={inputClass + " bg-white"} style={inputStyle}>
-                    <option value="">Servicio de interés *</option>
+                  <label htmlFor="servicio" className={labelClass}>Servicio de interés *</label>
+                  <select id="servicio" {...register("servicio")} className={inputClass}>
+                    <option value="">Selecciona…</option>
                     {services.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
-                  {errors.servicio && <p className="text-red-500 text-xs mt-1">{errors.servicio.message}</p>}
+                  {errors.servicio && <p className="text-red-600 text-xs mt-1">{errors.servicio.message}</p>}
                 </div>
                 <div>
-                  <textarea {...register("mensaje")} placeholder="Mensaje *" rows={4} className={inputClass} style={inputStyle} />
-                  {errors.mensaje && <p className="text-red-500 text-xs mt-1">{errors.mensaje.message}</p>}
+                  <label htmlFor="mensaje" className={labelClass}>Mensaje *</label>
+                  <textarea id="mensaje" {...register("mensaje")} rows={4} className={inputClass} />
+                  {errors.mensaje && <p className="text-red-600 text-xs mt-1">{errors.mensaje.message}</p>}
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] disabled:opacity-70"
-                  style={{ backgroundColor: "#00A878", color: "#0D1B2A" }}
+                  className="w-full py-3.5 rounded-md font-semibold text-base text-white transition-colors hover:bg-[#00553F] disabled:opacity-70"
+                  style={{ backgroundColor: "#006B52" }}
                 >
-                  {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
+                  {isSubmitting ? "Enviando..." : "Enviar mensaje"}
                 </button>
               </form>
             )}
@@ -128,46 +148,46 @@ export default function Contactanos() {
 
           {/* Contact info */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
             {/* Urgent card */}
-            <div className="rounded-2xl p-6" style={{ backgroundColor: "#0D1B2A", border: "2px solid #00C896" }}>
-              <h3 className="text-[#00A878] font-bold text-lg mb-2">¿Necesitas asesoría urgente?</h3>
-              <p className="text-white text-sm mb-4">
+            <div className="rounded-lg p-6" style={{ backgroundColor: "#16294F" }}>
+              <h3 className="text-white font-bold text-lg mb-2">¿Necesitas asesoría urgente?</h3>
+              <p className="text-white/70 text-sm mb-4">
                 Escríbenos por WhatsApp a Bolivia o Costa Rica — respondemos en menos de 24 horas.
               </p>
               <div className="space-y-3">
                 <a href="https://wa.me/59160547193" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
-                  <Phone size={16} className="text-[#00A878]" /> 🇧🇴 Bolivia: +591 60547193
+                  className="flex items-center gap-3 text-white hover:text-[#00C896] transition-colors text-sm">
+                  <Phone size={16} className="text-[#00C896]" /> Bolivia: +591 60547193
                 </a>
                 <a href="https://wa.me/59175758622" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
-                  <Phone size={16} className="text-[#00A878]" /> 🇧🇴 Bolivia: +591 75758622
+                  className="flex items-center gap-3 text-white hover:text-[#00C896] transition-colors text-sm">
+                  <Phone size={16} className="text-[#00C896]" /> Bolivia: +591 75758622
                 </a>
                 <a href="https://wa.me/50670844241" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
-                  <Phone size={16} className="text-[#00A878]" /> 🇨🇷 Costa Rica: +506 70844241
+                  className="flex items-center gap-3 text-white hover:text-[#00C896] transition-colors text-sm">
+                  <Phone size={16} className="text-[#00C896]" /> Costa Rica: +506 70844241
                 </a>
                 <a href="https://wa.me/50670387373" target="_blank" rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white hover:text-[#00A878] transition-colors text-sm">
-                  <Phone size={16} className="text-[#00A878]" /> 🇨🇷 Costa Rica: +506 70387373
+                  className="flex items-center gap-3 text-white hover:text-[#00C896] transition-colors text-sm">
+                  <Phone size={16} className="text-[#00C896]" /> Costa Rica: +506 70387373
                 </a>
               </div>
             </div>
 
             {/* Contact links */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="rounded-lg p-6 border border-gray-200 space-y-4">
               <a href="mailto:info@saetasprevencion.com"
-                className="flex items-center gap-3 text-[#0D1B2A] hover:text-[#00A878] transition-colors text-sm">
-                <Mail size={18} className="text-[#00A878]" /> info@saetasprevencion.com
+                className="flex items-center gap-3 text-[#16294F] hover:text-[#006B52] transition-colors text-sm">
+                <Mail size={18} className="text-[#006B52]" /> info@saetasprevencion.com
               </a>
               <a href="https://www.facebook.com/Saetaprevecion" target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-3 text-[#0D1B2A] hover:text-[#00A878] transition-colors text-sm">
-                <span className="w-[18px] h-[18px] rounded bg-[#00A878] text-[#0D1B2A] flex items-center justify-center text-xs font-bold flex-shrink-0">f</span>
+                className="flex items-center gap-3 text-[#16294F] hover:text-[#006B52] transition-colors text-sm">
+                <span className="w-[18px] h-[18px] rounded bg-[#006B52] text-white flex items-center justify-center text-xs font-bold flex-shrink-0">f</span>
                 Facebook: Saetas Prevención
               </a>
             </div>

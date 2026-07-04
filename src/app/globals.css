@@ -47,14 +47,17 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Brand colors */
-  --color-brand-navy: #0D1B2A;
+  /* Brand colors — industrial theme
+     green (primary UI) and navy pulled from the official logo */
+  --color-brand-navy: #16294F;
   --color-brand-navyMid: #1A3550;
+  --color-brand-green: #006B52;
+  --color-brand-greenLight: #00C896;
   --color-brand-teal: #00A878;
-  --color-brand-tealLight: #00C896;
   --color-brand-white: #FFFFFF;
-  --color-brand-muted: #A0AEC0;
-  --color-brand-bgLight: #F7F9FC;
+  --color-brand-ink: #1A202C;
+  --color-brand-muted: #4A5568;
+  --color-brand-bgLight: #F4F6F8;
 
   /* Brand animations */
   --animate-float: float 3s ease-in-out infinite;
@@ -157,6 +160,9 @@
     @apply font-sans;
     scroll-behavior: smooth;
   }
+  h1, h2, h3, h4 {
+    font-family: var(--font-archivo), var(--font-sans), sans-serif;
+  }
 }
 
 /* Custom scrollbar */
@@ -164,14 +170,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0D1B2A;
+  background: #F4F6F8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #F5C518;
+  background: #16294F;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FDE878;
+  background: #006B52;
 }
 
 /* Chat scrollbar */
