@@ -81,7 +81,7 @@ src/components/
              FloatingActions (WhatsApp picker + 20s "asesoría urgente" nudge + scroll-top)
   sections/  Hero, ServiciosRecientes, Servicios, Clientes, CtaBand, AcercaDe,
              ContactoInfo, Contactanos, Descargables, TiendaEnLinea, IAparaSYSO
-public/clientes/   # 32 real client logos (WebP ~120px, from beacons.ai/saeta_)
+public/clientes/   # 39 real client logos (WebP ~120px; beacons.ai, official sites, FB/IG)
 public/industria/  # 8 industrial photos (Unsplash placeholders — replace with own)
 docs/SDD.md        # this document
 ```
@@ -118,7 +118,7 @@ Decisions confirmed with the owner (2026-07-03/04).
 ### 3.1 Landing page (3M-pattern)
 - Full-width photo hero with overlay headline; **"Trabajos recientes"** article reel
   (mockup cards until real case studies are written); 10 real services (from
-  beacons.ai/saeta_); client-logo marquee (32 real clients, owner-confirmed, #28 of the
+  beacons.ai/saeta_); client-logo marquee (49 real clients — 39 with logo, 10 as styled text cards pending logo files; owner-confirmed, #28 of the
   original 33 removed as unidentifiable); light-gray CTA band.
 - "Acerca de" lives on `/sobre-nosotros` (not the landing), 3M-style.
 

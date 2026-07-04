@@ -33,9 +33,27 @@ const roster: { name: string; logo?: string }[] = [
   { name: "Pha Yawi Restaurante", logo: "/clientes/pha-yawi.webp" },
   { name: "Sabor Gaucho", logo: "/clientes/sabor-gaucho.webp" },
   { name: "Cevichería Mi Perú", logo: "/clientes/mi-peru.webp" },
-  { name: "Hotel Segovia II", logo: "/clientes/hotel-segovia.webp" },
+  { name: "Hoteles Segovia", logo: "/clientes/hotel-segovia.webp" },
   { name: "Twiggy Perfumería", logo: "/clientes/twiggy.webp" },
   { name: "Kiltros Clínica Veterinaria", logo: "/clientes/kiltros.webp" },
+  { name: "Automóvil Club Boliviano", logo: "/clientes/automovil-club.webp" },
+  { name: "Club Alemán", logo: "/clientes/club-aleman.webp" },
+  { name: "Elite Brands", logo: "/clientes/elite-brands.webp" },
+  { name: "Bionova", logo: "/clientes/bionova.webp" },
+  { name: "Top Service", logo: "/clientes/top-service.webp" },
+  { name: "Vida Sana", logo: "/clientes/vida-sana.webp" },
+  { name: "Mi Chola Restaurante", logo: "/clientes/mi-chola.webp" },
+  // Sin logo disponible en línea — tarjeta de texto hasta que el cliente provea el archivo.
+  { name: "Macabeo" },
+  { name: "El Asador" },
+  { name: "Sillpich's" },
+  { name: "Eirene" },
+  { name: "Minera D'Cobre S.A." },
+  { name: "Laboratorio Torrez" },
+  { name: "Manti Ingeniería" },
+  { name: "Constructora Patrias" },
+  { name: "Constructora Torre Nueva" },
+  { name: "Asociación Accidental Triunfo" },
 ];
 
 // Duplicado para que el loop de la marquesina sea continuo.
