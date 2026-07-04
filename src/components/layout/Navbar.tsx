@@ -12,6 +12,61 @@ const navLinks = [
   { label: "IA para SYSO", href: "/ia-syso", soon: true },
 ];
 
+const phones = [
+  { country: "Bolivia", number: "59160547193", display: "+591 60547193" },
+  { country: "Bolivia", number: "59175758622", display: "+591 75758622" },
+  { country: "Costa Rica", number: "50670844241", display: "+506 70844241" },
+  { country: "Costa Rica", number: "50670387373", display: "+506 70387373" },
+];
+
+// Rota los 4 números de WhatsApp en el mismo espacio de la utility bar.
+// Se pausa al pasar el cursor y queda estático si el usuario prefiere menos movimiento.
+function PhoneRotator() {
+  const [idx, setIdx] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (paused || reducedMotion) return;
+    const t = setInterval(() => setIdx((i) => (i + 1) % phones.length), 4000);
+    return () => clearInterval(t);
+  }, [paused, reducedMotion]);
+
+  const p = phones[idx];
+
+  return (
+    <div
+      className="relative h-9 w-[220px] overflow-hidden"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <AnimatePresence mode="wait">
+        <motion.a
+          key={idx}
+          initial={reducedMotion ? false : { opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+          href={`https://wa.me/${p.number}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 flex items-center gap-1.5 hover:text-[#00C896] transition-colors whitespace-nowrap"
+        >
+          <Phone size={12} /> {p.country} {p.display}
+        </motion.a>
+      </AnimatePresence>
+    </div>
+  );
+}
+
 function SoonBadge() {
   return (
     <span className="ml-1.5 align-middle text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-[#F5C518] text-[#16294F]">
@@ -35,24 +90,7 @@ export default function Navbar() {
       {/* Utility bar */}
       <div style={{ backgroundColor: "#16294F" }} className="text-white/90 text-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4 overflow-hidden">
-            <a
-              href="https://wa.me/59160547193"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-[#00C896] transition-colors whitespace-nowrap"
-            >
-              <Phone size={12} /> Bolivia +591 60547193
-            </a>
-            <a
-              href="https://wa.me/50670844241"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1.5 hover:text-[#00C896] transition-colors whitespace-nowrap"
-            >
-              <Phone size={12} /> Costa Rica +506 70844241
-            </a>
-          </div>
+          <PhoneRotator />
           <a
             href="mailto:info@saetasprevencion.com"
             className="hidden md:flex items-center gap-1.5 hover:text-[#00C896] transition-colors whitespace-nowrap"
