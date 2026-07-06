@@ -1,5 +1,7 @@
 "use client";
+import { useRef } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Clientes reales de Saetas (fuente: beacons.ai/saeta_, confirmados por el propietario).
 // Logos en /public/clientes/ (~120px de alto, WebP).
@@ -58,6 +60,34 @@ const roster: { name: string; logo?: string }[] = [
 const track = [...roster, ...roster];
 
 export default function Clientes() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const nudging = useRef(false);
+
+  // Avanza/retrocede la marquesina animando el currentTime de la animación CSS.
+  const PERIOD_MS = 140000; // debe coincidir con --animate-marquee en globals.css
+  const nudge = (dir: 1 | -1) => {
+    const el = trackRef.current;
+    const anim = el?.getAnimations()[0];
+    if (!el || !anim || nudging.current) return;
+    nudging.current = true;
+    const total = 14000 * dir; // salto equivalente a ~10% del ciclo
+    const dur = 500;
+    const start = performance.now();
+    let applied = 0;
+    const step = (now: number) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const delta = total * eased - applied;
+      applied = total * eased;
+      let ct = Number(anim.currentTime ?? 0) + delta;
+      if (ct < 0) ct += PERIOD_MS;
+      anim.currentTime = ct;
+      if (p < 1) requestAnimationFrame(step);
+      else nudging.current = false;
+    };
+    requestAnimationFrame(step);
+  };
+
   return (
     <section id="clientes" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,6 +101,24 @@ export default function Clientes() {
           </p>
         </div>
 
+        {/* Controles */}
+        <div className="flex justify-end gap-2 mb-4">
+          <button
+            onClick={() => nudge(-1)}
+            aria-label="Retroceder clientes"
+            className="w-9 h-9 rounded-full border border-gray-300 bg-white flex items-center justify-center text-[#16294F] hover:border-[#006B52] hover:text-[#006B52] transition-colors"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={() => nudge(1)}
+            aria-label="Avanzar clientes"
+            className="w-9 h-9 rounded-full border border-gray-300 bg-white flex items-center justify-center text-[#16294F] hover:border-[#006B52] hover:text-[#006B52] transition-colors"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+
         {/* Marquesina */}
         <div
           className="relative overflow-hidden"
@@ -81,7 +129,7 @@ export default function Clientes() {
               "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
           }}
         >
-          <div className="flex w-max animate-marquee py-1 hover:[animation-play-state:paused]">
+          <div ref={trackRef} className="flex w-max animate-marquee py-1 hover:[animation-play-state:paused]">
             {track.map((c, i) => (
               <div
                 key={`${c.name}-${i}`}
