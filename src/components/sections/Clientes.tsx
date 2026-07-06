@@ -48,6 +48,7 @@ const roster: { name: string; logo?: string }[] = [
   { name: "Sillpich's", logo: "/clientes/sillpichs.webp" },
   { name: "Laboratorio Torres", logo: "/clientes/laboratorio-torres.webp" },
   { name: "Manti Ingeniería Ltda.", logo: "/clientes/manti-ingenieria.webp" },
+  { name: "Red Enlace", logo: "/clientes/red-enlace.webp" },
   // Pendientes de logo (fuera del reel hasta tener el archivo):
   // Eirene, Minera D'Cobre S.A., Constructora Patrias,
   // Constructora Torre Nueva, Asociación Accidental Triunfo.
