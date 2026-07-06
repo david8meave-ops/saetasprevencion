@@ -101,35 +101,33 @@ export default function Clientes() {
           </p>
         </div>
 
-        {/* Controles */}
-        <div className="flex justify-end gap-2 mb-4">
+        {/* Marquesina + controles superpuestos */}
+        <div className="relative group">
           <button
             onClick={() => nudge(-1)}
             aria-label="Retroceder clientes"
-            className="w-9 h-9 rounded-full border border-gray-300 bg-white flex items-center justify-center text-[#16294F] hover:border-[#006B52] hover:text-[#006B52] transition-colors"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 border border-gray-200 shadow-md backdrop-blur-sm flex items-center justify-center text-[#16294F] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 max-md:opacity-60 hover:bg-white hover:text-[#006B52] transition-all duration-200"
           >
-            <ChevronLeft size={16} />
+            <ChevronLeft size={18} />
           </button>
           <button
             onClick={() => nudge(1)}
             aria-label="Avanzar clientes"
-            className="w-9 h-9 rounded-full border border-gray-300 bg-white flex items-center justify-center text-[#16294F] hover:border-[#006B52] hover:text-[#006B52] transition-colors"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 border border-gray-200 shadow-md backdrop-blur-sm flex items-center justify-center text-[#16294F] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 max-md:opacity-60 hover:bg-white hover:text-[#006B52] transition-all duration-200"
           >
-            <ChevronRight size={16} />
+            <ChevronRight size={18} />
           </button>
-        </div>
 
-        {/* Marquesina */}
-        <div
-          className="relative overflow-hidden"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-          }}
-        >
-          <div ref={trackRef} className="flex w-max animate-marquee py-1 hover:[animation-play-state:paused]">
+          <div
+            className="overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+          >
+            <div ref={trackRef} className="flex w-max animate-marquee py-1 hover:[animation-play-state:paused]">
             {track.map((c, i) => (
               <div
                 key={`${c.name}-${i}`}
@@ -149,6 +147,7 @@ export default function Clientes() {
                 )}
               </div>
             ))}
+            </div>
           </div>
         </div>
       </div>

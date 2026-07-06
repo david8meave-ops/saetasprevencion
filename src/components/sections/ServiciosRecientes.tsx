@@ -55,38 +55,36 @@ export default function ServiciosRecientes() {
   return (
     <section id="trabajos" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-10 gap-4">
-          <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
-              Seguridad en el terreno
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F]">
-              Trabajos recientes
-            </h2>
-          </div>
-          <div className="hidden sm:flex gap-2">
-            <button
-              onClick={() => scrollBy(-1)}
-              aria-label="Anterior"
-              className="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center text-[#16294F] hover:border-[#006B52] hover:text-[#006B52] transition-colors"
-            >
-              <ChevronLeft size={18} />
-            </button>
-            <button
-              onClick={() => scrollBy(1)}
-              aria-label="Siguiente"
-              className="w-10 h-10 rounded-md border border-gray-300 flex items-center justify-center text-[#16294F] hover:border-[#006B52] hover:text-[#006B52] transition-colors"
-            >
-              <ChevronRight size={18} />
-            </button>
-          </div>
+        <div className="mb-10">
+          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[#006B52] mb-3 block">
+            Seguridad en el terreno
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#16294F]">
+            Trabajos recientes
+          </h2>
         </div>
 
-        {/* Reel horizontal */}
-        <div
-          ref={scroller}
-          className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
+        {/* Reel horizontal + controles superpuestos */}
+        <div className="relative group">
+          <button
+            onClick={() => scrollBy(-1)}
+            aria-label="Anterior"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 border border-gray-200 shadow-md backdrop-blur-sm flex items-center justify-center text-[#16294F] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 max-md:opacity-60 hover:bg-white hover:text-[#006B52] transition-all duration-200"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <button
+            onClick={() => scrollBy(1)}
+            aria-label="Siguiente"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/80 border border-gray-200 shadow-md backdrop-blur-sm flex items-center justify-center text-[#16294F] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 max-md:opacity-60 hover:bg-white hover:text-[#006B52] transition-all duration-200"
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          <div
+            ref={scroller}
+            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
           {articulos.map((a) => (
             <article
               key={a.title}
@@ -121,6 +119,7 @@ export default function ServiciosRecientes() {
               </div>
             </article>
           ))}
+          </div>
         </div>
       </div>
     </section>
