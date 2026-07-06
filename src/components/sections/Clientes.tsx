@@ -85,15 +85,15 @@ export default function Clientes() {
               <div
                 key={`${c.name}-${i}`}
                 title={c.name}
-                className="group mr-5 flex h-[104px] w-48 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white px-5 transition-all duration-300 hover:border-[#006B52]/50 hover:shadow-sm"
+                className="group mr-5 flex h-[104px] w-48 shrink-0 items-center justify-center rounded-md border border-gray-200 bg-white px-4 transition-all duration-300 hover:border-[#006B52]/50 hover:shadow-sm"
               >
                 {c.logo ? (
                   <Image
                     src={c.logo}
                     alt={`Logo de ${c.name}`}
-                    width={160}
-                    height={58}
-                    className="max-h-[58px] w-auto max-w-full object-contain opacity-85 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                    width={400}
+                    height={240}
+                    className="h-20 w-auto max-w-full object-contain"
                   />
                 ) : (
                   <span className="text-sm font-semibold text-[#4A5568]">{c.name}</span>
