@@ -29,7 +29,14 @@ export default function Descargables() {
   } = useForm<DownloadFormData>({ resolver: zodResolver(downloadSchema) });
 
   const onSubmit = (data: DownloadFormData) => {
-    console.log("Lead captured:", data);
+    // Registra el lead (Notion + email); la descarga no depende del resultado.
+    const recurso = resources.find((d) => d.file === pendingFile)?.title;
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...data, recurso }),
+    }).catch(() => {});
+
     setSuccess(true);
     setTimeout(() => {
       if (pendingFile) {

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { logLeadToNotion } from "@/lib/notion-leads";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -7,6 +8,12 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { nombre, empresa, pais, telefono, email, servicio, mensaje } = body;
+
+    // Registro en Notion (no bloquea ni falla el envío del email)
+    const notionLog = logLeadToNotion({
+      nombre, empresa, pais, telefono, email, servicio, mensaje,
+      fuente: "Formulario de contacto",
+    });
 
     await resend.emails.send({
       from: "Saetas Prevención Web <no-reply@saetasprevencion.com>",
@@ -35,6 +42,8 @@ export async function POST(req: NextRequest) {
         </div>
       `,
     });
+
+    await notionLog;
 
     return NextResponse.json({ success: true });
   } catch (error) {

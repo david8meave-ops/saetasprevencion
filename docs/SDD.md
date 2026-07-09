@@ -176,7 +176,7 @@ polished; store and chatbot may remain "Próximamente".
 - [ ] Instagram / LinkedIn profile URLs for the footer (currently `#`)
 - [ ] `og-image.png` (referenced in metadata but missing — breaks social sharing)
 - [ ] Vercel Analytics installed
-- [ ] Leads → Notion database (contact + download forms)
+- [x] Leads → Notion database "Saetas — Leads" (contact + download forms wired; awaiting owner NOTION_API_KEY to activate)
 
 ### Phase 2 — Chatbot goes live
 - [ ] Real `ANTHROPIC_API_KEY` in `.env.local` + Vercel
