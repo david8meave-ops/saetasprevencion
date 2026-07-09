@@ -117,7 +117,7 @@ Decisions confirmed with the owner (2026-07-03/04).
 
 ### 3.1 Landing page (3M-pattern)
 - Full-width photo hero with overlay headline; **"Trabajos recientes"** article reel
-  (mockup cards until real case studies are written); 10 real services (from
+  (9 real case studies at /casos/<slug>, 7 published + 2 hidden pending photos; anonymized clients, watermarked photos); 10 real services (from
   beacons.ai/saeta_); client-logo marquee (44 real clients, all with logos; owner-confirmed, #28 of the
   original 33 removed as unidentifiable); light-gray CTA band.
 - "Acerca de" lives on `/sobre-nosotros` (not the landing), 3M-style.
@@ -172,7 +172,7 @@ polished; store and chatbot may remain "Próximamente".
 - [x] Bolivia · Costa Rica positioning (copy, metadata, sitemap)
 - [ ] **Owner review of `feature/tema-industrial` preview → merge to `main`** ← current gate
 - [ ] Replace Unsplash placeholders in `/public/industria/` with own photos
-- [ ] Real case-study articles for "Trabajos recientes" (cards are mockups)
+- [x] Real case-study articles for "Trabajos recientes" (9 written from owner interview; GEDESA + BBVA hidden until photos arrive)
 - [ ] Instagram / LinkedIn profile URLs for the footer (currently `#`)
 - [ ] `og-image.png` (referenced in metadata but missing — breaks social sharing)
 - [ ] Vercel Analytics installed

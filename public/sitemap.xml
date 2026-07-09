@@ -19,6 +19,48 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.saetasprevencion.com/casos/transporte-interdepartamental</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.saetasprevencion.com/casos/ingenieria-electrica</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.saetasprevencion.com/casos/club-social</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.saetasprevencion.com/casos/club-automovilistico</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.saetasprevencion.com/casos/red-pagos-electronicos</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.saetasprevencion.com/casos/cadena-supermercados</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.saetasprevencion.com/casos/formacion-sippci</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.saetasprevencion.com/descargables</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>

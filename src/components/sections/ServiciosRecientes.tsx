@@ -1,49 +1,9 @@
 "use client";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-
-// MOCKUP: casos/artículos de ejemplo. Cada tarjeta enlazará a un artículo
-// real describiendo trabajos hechos para clientes (se desarrollará después).
-// Las fotos son placeholders de /public/industria/.
-const articulos = [
-  {
-    img: "/industria/industria-3.webp",
-    tag: "Programa SST",
-    title: "Implementación de programa NTS-009 en planta industrial",
-    excerpt: "Diagnóstico, documentación y puesta en marcha del programa de seguridad y salud en el trabajo.",
-  },
-  {
-    img: "/industria/industria-4.webp",
-    tag: "Monitoreo",
-    title: "Monitoreo ocupacional de ruido e iluminación",
-    excerpt: "Medición de agentes físicos en áreas operativas y plan de control de riesgos.",
-  },
-  {
-    img: "/industria/industria-5.webp",
-    tag: "Emergencias",
-    title: "Plan de evacuación y simulacro general",
-    excerpt: "Diseño de rutas, señalización y ejecución de simulacro con brigadas.",
-  },
-  {
-    img: "/industria/industria-6.webp",
-    tag: "Carga de fuego",
-    title: "Estudio de carga de fuego para certificación",
-    excerpt: "Cálculo técnico y recomendaciones de protección contra incendios.",
-  },
-  {
-    img: "/industria/industria-7.webp",
-    tag: "Capacitación",
-    title: "Formación de brigadas de emergencia",
-    excerpt: "Capacitación teórico-práctica con respaldo normativo RM 0329/21.",
-  },
-  {
-    img: "/industria/industria-8.webp",
-    tag: "Señalética",
-    title: "Señalización de seguridad según RM 849/14",
-    excerpt: "Provisión e instalación de señalética normada en instalaciones del cliente.",
-  },
-];
+import { casosPublicados } from "@/lib/casos";
 
 export default function ServiciosRecientes() {
   const scroller = useRef<HTMLDivElement>(null);
@@ -85,40 +45,36 @@ export default function ServiciosRecientes() {
             ref={scroller}
             className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-          {articulos.map((a) => (
-            <article
-              key={a.title}
-              className="snap-start shrink-0 w-[300px] sm:w-[340px] rounded-lg border border-gray-200 bg-white overflow-hidden transition-all duration-200 hover:border-[#006B52] hover:shadow-md"
-            >
-              <div className="h-44 overflow-hidden">
-                <Image
-                  src={a.img}
-                  alt={a.title}
-                  width={680}
-                  height={352}
-                  className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-5">
-                <span className="text-[10px] font-bold uppercase tracking-wide text-[#006B52]">
-                  {a.tag}
-                </span>
-                <h3 className="text-[#16294F] font-semibold text-base mt-1.5 mb-2 leading-snug">
-                  {a.title}
-                </h3>
-                <p className="text-[#4A5568] text-sm leading-relaxed mb-4">{a.excerpt}</p>
-                <span
-                  className="inline-flex items-center gap-1 text-sm font-semibold text-[#006B52]/60 cursor-default select-none"
-                  title="Artículo en preparación"
-                >
-                  Leer más <ArrowRight size={14} />
-                  <span className="ml-1 text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded-full bg-[#F5C518] text-[#16294F]">
-                    Pronto
-                  </span>
-                </span>
-              </div>
-            </article>
-          ))}
+            {casosPublicados.map((c) => (
+              <article
+                key={c.slug}
+                className="snap-start shrink-0 w-[300px] sm:w-[340px] rounded-lg border border-gray-200 bg-white overflow-hidden transition-all duration-200 hover:border-[#006B52] hover:shadow-md"
+              >
+                <Link href={`/casos/${c.slug}`} className="block">
+                  <div className="h-44 overflow-hidden">
+                    <Image
+                      src={`/casos/${c.slug}/1.webp`}
+                      alt={c.tituloCorto}
+                      width={680}
+                      height={352}
+                      className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <span className="text-[10px] font-bold uppercase tracking-wide text-[#006B52]">
+                      {c.tag}
+                    </span>
+                    <h3 className="text-[#16294F] font-semibold text-base mt-1.5 mb-2 leading-snug">
+                      {c.tituloCorto}
+                    </h3>
+                    <p className="text-[#4A5568] text-sm leading-relaxed mb-4">{c.excerpt}</p>
+                    <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#006B52]">
+                      Leer más <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </div>
