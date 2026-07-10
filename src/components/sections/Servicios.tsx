@@ -7,6 +7,7 @@ import {
 
 const services = [
   { icon: Shield, title: "Programa de Gestión de Seguridad y Salud en el Trabajo (NTS-009)", desc: "Elaboración e implementación del programa de gestión de SST conforme a la Norma Técnica de Seguridad NTS-009." },
+  { icon: Scale, title: "Asesoría Legal ante el MTEPS", desc: "Respuesta a informes de inspección del Ministerio de Trabajo, Empleo y Previsión Social." },
   { icon: Activity, title: "Monitoreos Ocupacionales", desc: "Mediciones de agentes físicos, químicos y ergonómicos en el ambiente de trabajo." },
   { icon: Zap, title: "Planos Eléctricos", desc: "Elaboración y regularización de planos eléctricos para instalaciones industriales y comerciales." },
   { icon: Map, title: "Planos de Evacuación", desc: "Diseño de planos y rutas de evacuación conforme a los requisitos normativos." },
@@ -14,7 +15,6 @@ const services = [
   { icon: Siren, title: "Implementación de Alarmas contra Incendio", desc: "Provisión e instalación de sistemas de alarma contra incendio conforme a la normativa vigente." },
   { icon: FireExtinguisher, title: "Implementación de Extintores y Sistemas de Protección contra Incendios (SIPPCI)", desc: "Extintores, detección y sistemas de protección contra incendios según la normativa SIPPCI." },
   { icon: AlertTriangle, title: "Señalética de Seguridad (RM 849/14)", desc: "Provisión e instalación de señalización de seguridad según la Resolución Ministerial 849/14." },
-  { icon: Scale, title: "Asesoría Legal ante el MTEPS", desc: "Respuesta a informes de inspección del Ministerio de Trabajo, Empleo y Previsión Social." },
   { icon: GraduationCap, title: "Capacitaciones referentes a Seguridad y Salud en el Trabajo", desc: "Primeros auxilios, uso y manejo de extintores, trabajos en altura, en espacio confinado y en espacios reducidos, normativa legal y otros a necesidad." },
   { icon: GraduationCap, title: "Formación Profesional (RM 0329/21)", desc: "Cursos y diplomados de formación profesional con respaldo de la RM 0329/21." },
 ];

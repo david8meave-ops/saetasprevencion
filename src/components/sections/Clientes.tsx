@@ -97,8 +97,8 @@ export default function Clientes() {
             Nuestros Clientes
           </span>
           <p className="text-lg text-[#4A5568] max-w-2xl mx-auto">
-            Más de <span className="font-bold text-[#16294F]">50 organizaciones</span> confían
-            en Saetas para transformar el cumplimiento en ventaja competitiva
+            <span className="font-bold text-[#16294F]">Organizaciones</span> que confían en Saetas
+            para transformar el cumplimiento en ventaja competitiva
           </p>
         </div>
 
