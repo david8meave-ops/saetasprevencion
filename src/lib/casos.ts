@@ -175,7 +175,7 @@ export const casos: Caso[] = [
     publicado: true,
     cuerpo: [
       { t: "p", v: "Operar una cadena de supermercados en Bolivia implica gestionar simultáneamente cumplimiento normativo replicado en cada sucursal, riesgos operativos que van desde el estrés térmico hasta el robo con armas de fuego, y una alta responsabilidad reputacional propia de una marca líder. La NTS-009 aplica por sucursal —señalética, monitoreos, brigadas, simulacros y documentación—, y con cada punto de venta la exposición ante inspecciones se multiplica." },
-      { t: "p", v: "Una cadena líder del sector, con más de 150 trabajadores atendidos en tres o más sucursales de La Paz y El Alto —incluyendo grandes, medianas y pequeñas—, confió en Saetas Prevención para implementar y luego actualizar su Programa de SST. La operación incluye producción propia integrada: carnicería, cocina, panadería y repostería, lo que agrega complejidad a la matriz de riesgos." },
+      { t: "p", v: "Una cadena líder del sector, con más de 150 trabajadores atendidos en tres o más sucursales de La Paz y El Alto —incluyendo grandes, medianas y pequeñas—, confió en Saetas Prevención para implementar y luego actualizar su Programa de Gestión de SST. La operación incluye producción propia integrada: carnicería, cocina, panadería y repostería, lo que agrega complejidad a la matriz de riesgos." },
       { t: "h", v: "Diagnóstico" },
       { t: "ul", v: [
         "Exposición real a robos con armas de fuego en piso de venta.",
@@ -235,7 +235,7 @@ export const casos: Caso[] = [
     publicado: false, // pendiente de fotos del cliente
     cuerpo: [
       { t: "p", v: "Cuando una organización con conocimiento en seguridad ya existente opera con una red de nueve sucursales de infraestructuras distintas, el reto no es enseñar los fundamentos: es formalizar y estandarizar. Sin formalización, el conocimiento no se traduce en respuesta operativa consistente ni en cumplimiento normativo demostrable. Y en un rubro como la comercialización de insumos médicos, las exigencias sanitarias adicionales se combinan con las de Salud y Seguridad en el Trabajo, elevando la complejidad regulatoria." },
-      { t: "p", v: "Un grupo distribuidor de insumos médicos en Bolivia, con nueve sucursales en la ciudad de La Paz y empresas relacionadas bajo el mismo paraguas corporativo, contrató a Saetas Prevención para implementar su Programa de SST en la totalidad de sus puntos operativos." },
+      { t: "p", v: "Un grupo distribuidor de insumos médicos en Bolivia, con nueve sucursales en la ciudad de La Paz y empresas relacionadas bajo el mismo paraguas corporativo, contrató a Saetas Prevención para implementar su Programa de Gestión de SST en la totalidad de sus puntos operativos." },
       { t: "h", v: "Diagnóstico" },
       { t: "ul", v: [
         "Personal con base sólida de conocimiento en seguridad, pero sin gestión de riesgos formalizada y verificable por sucursal.",
@@ -272,7 +272,7 @@ export const casos: Caso[] = [
     publicado: false, // pendiente de fotos del cliente
     cuerpo: [
       { t: "p", v: "Cuando una organización opera exclusivamente en oficinas administrativas, es común subestimar los riesgos laborales. La percepción de \"aquí no pasa nada grave\" genera una parálisis del liderazgo para invertir en prevención. Sin embargo, la NTS-009 no distingue entre operación industrial y oficina administrativa: la exigencia es la misma, y también lo son las sanciones ante inspecciones que encuentren brechas." },
-      { t: "p", v: "Una entidad financiera boliviana enfocada en la captación de fondos para la seguridad de largo plazo de los trabajadores, con equipo 100% administrativo, contrató a Saetas Prevención para implementar su Programa de Seguridad y Salud en el Trabajo. La organización opera bajo el escrutinio adicional del sector financiero regulado, donde la formalidad y la auditoría cruzada son parte del ADN operativo." },
+      { t: "p", v: "Una entidad financiera boliviana enfocada en la captación de fondos para la seguridad de largo plazo de los trabajadores, con equipo 100% administrativo, contrató a Saetas Prevención para implementar su Programa de Gestión de Seguridad y Salud en el Trabajo. La organización opera bajo el escrutinio adicional del sector financiero regulado, donde la formalidad y la auditoría cruzada son parte del ADN operativo." },
       { t: "h", v: "Diagnóstico" },
       { t: "ul", v: [
         "Estrés laboral propio de una operación financiera con presión de resultados.",
@@ -296,5 +296,25 @@ export const casos: Caso[] = [
   },
 ];
 
-export const casosPublicados = casos.filter((c) => c.publicado);
+// Orden del reel "Trabajos recientes" (decisión del cliente):
+// primero la cadena de supermercados, luego el caso de ingeniería eléctrica,
+// y el resto en su orden actual. Los casos no listados se añaden al final.
+const ordenReel = [
+  "cadena-supermercados",
+  "ingenieria-electrica",
+  "transporte-interdepartamental",
+  "club-social",
+  "club-automovilistico",
+  "red-pagos-electronicos",
+  "formacion-sippci",
+];
+
+const casosOrdenados: Caso[] = [
+  ...ordenReel
+    .map((slug) => casos.find((c) => c.slug === slug))
+    .filter((c): c is Caso => !!c),
+  ...casos.filter((c) => !ordenReel.includes(c.slug)),
+];
+
+export const casosPublicados = casosOrdenados.filter((c) => c.publicado);
 export const getCaso = (slug: string) => casos.find((c) => c.slug === slug);

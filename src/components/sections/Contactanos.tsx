@@ -7,15 +7,16 @@ import { contactSchema, ContactFormData } from "@/lib/validations";
 import { CheckCircle } from "lucide-react";
 
 const services = [
-  "Programas de Seguridad y Salud en el Trabajo (NTS-009)",
+  "Programa de Gestión de Seguridad y Salud en el Trabajo (NTS-009)",
   "Monitoreos Ocupacionales",
   "Planos Eléctricos",
   "Planos de Evacuación",
   "Estudio de Carga de Fuego",
+  "Implementación de Alarmas contra Incendio",
+  "Implementación de Extintores y Sistemas de Protección contra Incendios (SIPPCI)",
   "Señalética de Seguridad (RM 849/14)",
   "Asesoría Legal ante el MTEPS",
-  "Plantillas de Capacitación SST",
-  "Aplicativos de Documentación",
+  "Capacitaciones referentes a Seguridad y Salud en el Trabajo",
   "Formación Profesional (RM 0329/21)",
   "Otro",
 ];

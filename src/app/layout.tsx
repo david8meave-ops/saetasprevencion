@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.saetasprevencion.com"),
   title: "Saetas Prevención | Consultoría en Salud y Seguridad Ocupacional",
   description:
-    "Empresa consultora en Salud y Seguridad Ocupacional con presencia en Bolivia y Costa Rica. Programas SST, monitoreos ocupacionales, capacitaciones y más.",
+    "Empresa consultora en Salud y Seguridad Ocupacional con presencia en Bolivia y Costa Rica. Programa de Gestión de SST, monitoreos ocupacionales, capacitaciones y más.",
   keywords:
     "salud ocupacional Bolivia, seguridad industrial Bolivia, SYSO Costa Rica, consultoría SSO, NTS-009, Saetas Prevención",
   openGraph: {
