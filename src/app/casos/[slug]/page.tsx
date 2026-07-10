@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingActions from "@/components/layout/FloatingActions";
+import GaleriaReel from "@/components/sections/GaleriaReel";
 import { casosPublicados, getCaso } from "@/lib/casos";
 
 export function generateStaticParams() {
@@ -117,23 +118,11 @@ export default async function CasoPage({
           })}
         </div>
 
-        {/* Galería */}
+        {/* Galería — reel infinito */}
         {caso.fotos > 1 && (
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-14">
             <h2 className="text-xl font-bold text-[#16294F] mb-6">Galería</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {galeria.slice(1).map((n) => (
-                <div key={n} className="rounded-lg overflow-hidden border border-gray-200">
-                  <Image
-                    src={`/casos/${caso.slug}/${n}.webp`}
-                    alt={`${caso.tituloCorto} — fotografía ${n}`}
-                    width={800}
-                    height={600}
-                    className="h-52 w-full object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-              ))}
-            </div>
+            <GaleriaReel slug={caso.slug} fotos={galeria.slice(1)} />
           </div>
         )}
       </article>
